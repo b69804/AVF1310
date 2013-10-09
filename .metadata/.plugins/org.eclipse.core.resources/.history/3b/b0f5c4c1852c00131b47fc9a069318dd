@@ -82,7 +82,7 @@
             </section>
             <section data-role="content">
                 <h1>This is my link to my GH-Pages for iOS</h1>
-                <p><a href="http://b69804.github.io/AVF1310/avfMainProject/platforms/ios/www" data-ajax="false">http://b69804.github.io/AVF1310/avfMainProject/platforms/ios/www</a></p>
+                <p>http://b69804.github.io/AVF1310/avfMainProject/platforms/ios/www</p>
             </section>
             <section data-role="footer" data-position="fixed" data-id="titlePage">
                 <section data-role="navbar" data-iconpos="left">
@@ -99,7 +99,7 @@
             </section>
             <section data-role="content">
                 <h1>This is my link to my GH-Pages for Android</h1>
-                <p><a href="http://b69804.github.io/AVF1310/avfMainProject/platforms/android/assets/www" data-ajax="false">http://b69804.github.io/AVF1310/avfMainProject/platforms/android/assets/www</a></p>
+                <p>http://b69804.github.io/AVF1310/avfMainProject/platforms/android/www</p>
             </section>
             <section data-role="footer" data-position="fixed" data-id="titlePage">
                 <section data-role="navbar" data-iconpos="left">
