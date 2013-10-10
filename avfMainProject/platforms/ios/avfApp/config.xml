@@ -45,4 +45,6 @@
     <feature name="Compass">
         <param name="ios-package" value="CDVCompass" />
     </feature>
+    <access origin="*" />
+    <access origin="http://127.0.0.1*" />
 </widget>

@@ -9,7 +9,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
         <link rel="stylesheet" type="text/css" href="css/main.css" />
-        <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+        <!--<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />-->
         <link rel="stylesheet" href="css/ASD.min.css" />
         
         <title>AVF1310 Project Matthew Ashton</title>
@@ -81,8 +82,8 @@
                 <section class="center-wrapper"><img src="img/AVF1310_03.png" alt="titleImage" width="100" height="35"></section>
             </section>
             <section data-role="content">
-                <ul id="news">
-                    <li><h2>Breaking News Stories (Provided by USA Today)</h2></li>
+                <ul data-role="listview" data-inset="true" id="news" data-theme="a">
+                    <li><h1>Breaking News Stories (Provided by ESPN Feed)</h1></li>
                 </ul>
             </section>
             <section data-role="footer" data-position="fixed" data-id="titlePage">
@@ -98,8 +99,8 @@
                 <section class="center-wrapper"><img src="img/AVF1310_03.png" alt="titleImage" width="100" height="35"></section>
             </section>
             <section data-role="content">
-                <ul id="unitedPhotos">
-                    <li><h2>Instagram Photos for Manchester United</h2></li>
+                <h1 style= "font-size: 24pt">Instagram Photos for Manchester United</h1>
+                <ul data-role="listview" data-inset="true" id="unitedPhotos" data-theme="a">
                 </ul>
             </section>
             <section data-role="footer" data-position="fixed" data-id="titlePage">
