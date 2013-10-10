@@ -4,9 +4,22 @@
 $("#breakingNewsStories").on("pageinit", function(){
 
 $(function(){
-  var url = "http://api.usatoday.com/open/articles/topnews?api_key=jvgkjm5kbvdnvsa7kzn34rna";
+  //var url = "http://api.usatoday.com/open/articles/topnews?api_key=jvgkjm5kbvdnvsa7kzn34rna";
   
-  $.getJSON(url, breakingNews);
+  //$.getJSON(url, breakingNews);
+  $.ajax({
+         url: "http://api.usatoday.com/open/articles/topnews?api_key=jvgkjm5kbvdnvsa7kzn34rna",
+         type: "GET",
+         dataType: "json",
+         success: function(json){
+         console.log(json);
+            var items = $(json);
+                items.find("item").each(function(){
+                        var item = $(this);
+                                        $("");
+                                        
+                                        }
+         });
   
 });
 
