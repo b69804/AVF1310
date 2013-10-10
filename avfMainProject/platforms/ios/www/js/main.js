@@ -3,14 +3,14 @@
 
 $("#breakingNewsStories").on("pageinit", function(){
 
-  var url = "http://api.espn.com/v1/now?limit=3&apikey=x24c8a9fbdsykefrd6jrfagw";
+  var url = "http://api.espn.com/v1/now?limit=5&apikey=x24c8a9fbdsykefrd6jrfagw";
   
   $.getJSON(url, breakingNews);
 });
 var breakingNews = function(bNews){
 
   $.each(bNews.feed, function(index, news){
-         var story = "<li class='ui-li ui-li-static ui-btn-up-a ui-first-child ui-last-child'><h3>" + news.headline + "</h3><p>"+ news.description +"</p></li>";
+         var story = "<li><h3>" + news.headline + "</h3><p>"+ news.description +"</p></li>";
          $('#news').append(story);
          })
     };
@@ -27,7 +27,7 @@ $("#instagram").on("pageinit", function(){
 
 var instaSports = function(utdPics){
     $.each(utdPics.data, function(index, photo){
-           var pics = "<li class='ui-li ui-li-static ui-btn-up-a ui-first-child ui-last-child' ><img src='" + photo.images.standard_resolution.url + "'height='100%' width='100%'></li>";
+           var pics = "<li class='photoLayout'><img src='" + photo.images.standard_resolution.url + "'height='320' width='320'></li>";
            $("#unitedPhotos").append(pics);
            });
 };
