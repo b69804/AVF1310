@@ -3,7 +3,7 @@
 
 $("#breakingNewsStories").on("pageinit", function(){
 
-  var url = "http://api.espn.com/v1/now?limit=5&apikey=x24c8a9fbdsykefrd6jrfagw";
+  var url = "http://api.espn.com/v1/now?limit=7&apikey=x24c8a9fbdsykefrd6jrfagw";
   
   $.getJSON(url, breakingNews);
 });
