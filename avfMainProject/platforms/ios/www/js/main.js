@@ -1,6 +1,7 @@
 // Matthew Ashton
 // AVF 1310
 
+
 $("#breakingNewsStories").on("pageinit", function(){
 
   var url = "http://api.espn.com/v1/now?limit=7&apikey=x24c8a9fbdsykefrd6jrfagw";
@@ -31,3 +32,15 @@ var instaSports = function(utdPics){
            $("#unitedPhotos").append(pics);
            });
 };
+
+$("#device").on("pageinit", function(){
+        document.addEventListener("deviceready", getName, false);
+        function getName(){
+                var nameOfDevice = device.name;
+                console.log(nameOfDevice);
+                return nameOfDevice;
+        };
+        var element = document.getElementById('deviceProperties');
+            element.innerHTML = "Device Name: " + nameOfDevice + "<br />"
+                
+});
