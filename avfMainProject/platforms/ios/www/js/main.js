@@ -4,7 +4,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady(){
         var nameOfDevice = device.name;
-                console.log(nameOfDevice);
+        console.log(nameOfDevice);
     };
                           
 $("#breakingNewsStories").on("pageinit", function(){
@@ -39,8 +39,8 @@ var instaSports = function(utdPics){
 };
 
 $("#device").on("pageinit", function(){
-        var element = document.getElementById('deviceProperties');
-            element.innerHTML = "Device Name: " + nameOfDevice + "<br />";
+        var deviceInfo = $('#deviceProperties');
+            deviceInfo.innerHTML = "Device Name: " + nameOfDevice + "<br />";
 });
 
 
