@@ -128,6 +128,13 @@ a:link {
     text-align: center;
 }
 
+.photo{
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    height: 75%;
+    text-align: center;
+}
 
 
 

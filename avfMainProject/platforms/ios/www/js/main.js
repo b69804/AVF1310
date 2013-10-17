@@ -33,6 +33,43 @@ var instaSports = function(utdPics){
            });
 };
 
+$("#network").on("pageinit", function(){
+    var networkStatus = navigator.connection.type;
+                 var status = {};
+                 status[Connection.WIFI] = "<img src='img/wifi.png' class='photo'>";
+                 status[Connection.Cell]= "<img src='img/cell-tower.png' class='photo'>";
+            $("#networkPhoto").append(status[networkStatus])
+           
+});
+
+
+$("#capturePhoto").on("click", function(){
+                var pictureSource = navigator.camera.PictureSourceType;
+                destinationType = navigator.camera.DestinationType;
+                                      
+                var onPhotoDataSuccess = function() {};
+                var onFail = function(message) {
+                             alert('Failed because: ' + message);
+                }
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, saveToPhotoAlbum:true, destinationType: destinationType.DATA_URL });
+});
+    
+var alertDismissed = function(){}    
+
+$("#compass").on("click", function(){
+    
+    var fireAway = function(heading){
+        navigator.notification.alert('Heading: ' + heading.magneticHeading + ' with a Heading Accuracy of: ' + heading.headingAccuracy + ' degrees', alertDismissed, 'Compass Heading', 'See Ya!');
+    };
+    var onError = function(compassError){
+        alert("Fail.");
+    }
+        
+    navigator.compass.getCurrentHeading(fireAway, onError);
+});
+
+
+   
 
 
 };
