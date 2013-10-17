@@ -1,0 +1,141 @@
+/* Matthew Ashton
+ASD 1309 Mobile App Project */
+
+body {
+    background-color: #D8D8D8;
+}
+
+ul {
+    list-style-type:none;
+    background-color: #F0F0F0;
+    border-radius: 15px;
+    border: ridge;
+}
+
+a:link { 
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:35px;
+	line-height:35px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+}
+
+.footer a:link{
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:#ffffff;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	color:#000000;
+	font-family:verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:40px;
+        width: 98%;
+	text-decoration:none;
+	text-align:center;
+}
+
+.center-wrapper{
+    padding-top: 25px;
+    text-align: center;
+}
+
+.center-wrapper{
+    margin: 0 auto;
+}
+
+.photoLayout{
+    padding: 16pt;
+    display: inline-block;
+    
+}
+
+#week2 p {
+    margin: 10pt;
+   padding: 5pt;
+   font-size: 12pt;   
+}
+
+#week2 h1 {
+    font:helvetica;
+    font-size: 18pt;
+    text-align: center;
+}
+
+
+#news h1 {
+    font:helvetica;
+    font-size: 18pt;
+    text-align: center;
+}
+
+#news h3 {
+    padding-left: 7pt;
+}
+
+#news p {
+    margin: 10pt;
+   padding: 5pt;
+   font-size: 12pt;
+}
+
+#unitedPhotos h1 {
+    font:helvetica;
+    font-size: 24pt;
+    text-align: center;
+}
+
+.photo{
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    height: 75%;
+    text-align: center;
+}
+
+
+
+
