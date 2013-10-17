@@ -2,11 +2,16 @@
 // AVF 1310
 
 document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady(){
+function onDeviceReady(){
         var nameOfDevice = device.name;
         console.log(nameOfDevice);
-    };
-                          
+    
+$("#device").on("pageinit", function(){
+        var deviceInfo = $('#deviceProperties');
+                alert(nameOfDevice);
+            deviceInfo.innerHTML = "Device Name: " + nameOfDevice + "";
+});    
+
 $("#breakingNewsStories").on("pageinit", function(){
 
   var url = "http://api.espn.com/v1/now?limit=7&apikey=x24c8a9fbdsykefrd6jrfagw";
@@ -20,9 +25,6 @@ var breakingNews = function(bNews){
          $('#news').append(story);
          })
     };
-
-
-
 
 $("#instagram").on("pageinit", function(){
     
@@ -38,12 +40,9 @@ var instaSports = function(utdPics){
            });
 };
 
-$("#device").on("pageinit", function(){
-        var deviceInfo = $('#deviceProperties');
-            deviceInfo.innerHTML = "Device Name: " + nameOfDevice + "<br />";
-});
 
 
+};
 
 
 
