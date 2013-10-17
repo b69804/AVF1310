@@ -3,14 +3,7 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
-        var nameOfDevice = device.name;
-        console.log(nameOfDevice);
-    
-$("#device").on("pageinit", function(){
-        var deviceInfo = $('#deviceProperties');
-                alert(nameOfDevice);
-            deviceInfo.innerHTML = "Device Name: " + nameOfDevice + "";
-});    
+
 
 $("#breakingNewsStories").on("pageinit", function(){
 
@@ -28,7 +21,7 @@ var breakingNews = function(bNews){
 
 $("#instagram").on("pageinit", function(){
     
-      var url = "https://api.instagram.com/v1/tags/manchesterunited/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
+      var url = "https://api.instagram.com/v1/tags/"+ device.platform +"/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
       $.getJSON(url, instaSports);
                    
 });

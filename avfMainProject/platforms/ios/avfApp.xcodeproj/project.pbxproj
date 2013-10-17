@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1511853227234940B12FB5A3 /* CDVCompass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBB6946713A42108C7E3393 /* CDVCompass.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -49,6 +48,7 @@
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		367FC418A0874595BFBE97CE /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B4E776BED443DA8EC6535B /* CDVDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +121,8 @@
 		EC8086DB56E34A04937BF12A /* CDVCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCamera.m; path = org.apache.cordova.camera/CDVCamera.m; sourceTree = "<group>"; };
 		F20AC14C6E8D4CEAACAE974D /* CDVCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = org.apache.cordova.camera/CDVCamera.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = avfApp/config.xml; sourceTree = "<group>"; };
+		B6B4E776BED443DA8EC6535B /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		9516E143A2B849B0A796F9FF /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,8 @@
 				BC7EF2B05F2C40658DC8471D /* CDVExif.h */,
 				1FBB6946713A42108C7E3393 /* CDVCompass.m */,
 				337EA41130A84562B20C3744 /* CDVCompass.h */,
+				B6B4E776BED443DA8EC6535B /* CDVDevice.m */,
+				9516E143A2B849B0A796F9FF /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = avfApp/Plugins;
@@ -449,6 +453,7 @@
 				4B609A9F4245495AAA3284D4 /* CDVCamera.m in Sources */,
 				2D6E8137666A4B32BAD07143 /* CDVJpegHeaderWriter.m in Sources */,
 				1511853227234940B12FB5A3 /* CDVCompass.m in Sources */,
+				367FC418A0874595BFBE97CE /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
