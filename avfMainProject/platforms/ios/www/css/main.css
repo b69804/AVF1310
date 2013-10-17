@@ -93,17 +93,18 @@ a:link {
     
 }
 
-#week2 p {
+.week p {
     margin: 10pt;
    padding: 5pt;
    font-size: 12pt;   
 }
 
-#week2 h1 {
+.week h1 {
     font:helvetica;
     font-size: 18pt;
     text-align: center;
 }
+
 
 
 #news h1 {

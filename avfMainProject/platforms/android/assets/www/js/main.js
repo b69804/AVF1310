@@ -1,6 +1,10 @@
 // Matthew Ashton
 // AVF 1310
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
+
+
 $("#breakingNewsStories").on("pageinit", function(){
 
   var url = "http://api.espn.com/v1/now?limit=7&apikey=x24c8a9fbdsykefrd6jrfagw";
@@ -15,12 +19,9 @@ var breakingNews = function(bNews){
          })
     };
 
-
-
-
 $("#instagram").on("pageinit", function(){
     
-      var url = "https://api.instagram.com/v1/tags/manchesterunited/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
+      var url = "https://api.instagram.com/v1/tags/"+ device.platform +"/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
       $.getJSON(url, instaSports);
                    
 });
@@ -30,5 +31,46 @@ var instaSports = function(utdPics){
            var pics = "<li class='photoLayout'><img src='" + photo.images.standard_resolution.url + "'height='320' width='320'></li>";
            $("#unitedPhotos").append(pics);
            });
+};
+
+$("#network").on("pageinit", function(){
+    var networkStatus = navigator.connection.type;
+                 var status = {};
+                 status[Connection.WIFI] = "<img src='img/wifi.png' class='photo'>";
+                 status[Connection.CELL]= "<img src='img/cell-tower.png' class='photo'>";
+            $("#networkPhoto").append(status[networkStatus])
+           
+});
+
+
+$("#capturePhoto").on("click", function(){
+                var pictureSource = navigator.camera.PictureSourceType;
+                destinationType = navigator.camera.DestinationType;
+                                      
+                var onPhotoDataSuccess = function() {};
+                var onFail = function(message) {
+                             alert('Failed because: ' + message);
+                }
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, saveToPhotoAlbum:true, destinationType: destinationType.DATA_URL });
+});
+    
+var alertDismissed = function(){}    
+
+$("#compass").on("click", function(){
+    
+    var fireAway = function(heading){
+        navigator.notification.alert('Heading: ' + heading.magneticHeading + ' with a Heading Accuracy of: ' + heading.headingAccuracy + ' degrees', alertDismissed, 'Compass Heading', 'See Ya!');
+    };
+    var onError = function(compassError){
+        alert("Fail.");
+    }
+        
+    navigator.compass.getCurrentHeading(fireAway, onError);
+});
+
+
+   
+
+
 };
 
