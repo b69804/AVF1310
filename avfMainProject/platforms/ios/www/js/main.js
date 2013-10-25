@@ -3,25 +3,54 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
+    
 
+$("#myLocale").on("pageinit", function(){
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                  function onSuccess(position) {
+                  alert('Latitude: '          + position.coords.latitude          + '\n' +
+                        'Longitude: '         + position.coords.longitude         + '\n');
+                  };
+                  function onError(error) {
+                  alert('code: '    + error.code    + '\n' +
+                        'message: ' + error.message + '\n');
+                  };
+    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+ position.coords.longitude +"&sensor=true";
+    
+    $.getJSON(url, myAddressCheck);
+                          
+})
+var myAddressCheck = function(addy){
+            
+    $.each(addy.results, function(index, answer){
+                   
+        var address = "<li><h3>" + answer.formatted_address + "</h3></li>";
+        $('#myAddress').append(address);
+        })
+};
 
 $("#breakingNewsStories").on("pageinit", function(){
 
-  var url = "http://api.espn.com/v1/now?limit=7&apikey=x24c8a9fbdsykefrd6jrfagw";
+  var url = "http://api.espn.com/v1/now?limit=7&apikey=58uzg4x2jqdmkfkes6m6wk2t";
   
   $.getJSON(url, breakingNews);
+
 });
+
 var breakingNews = function(bNews){
 
   $.each(bNews.feed, function(index, news){
+         
          var story = "<li><h3>" + news.headline + "</h3><p>"+ news.description +"</p></li>";
          $('#news').append(story);
          })
     };
 
+    
 $("#instagram").on("pageinit", function(){
     
       var url = "https://api.instagram.com/v1/tags/"+ device.platform +"/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
+                   alert(url);
       $.getJSON(url, instaSports);
                    
 });
@@ -54,7 +83,7 @@ $("#capturePhoto").on("click", function(){
                 navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, saveToPhotoAlbum:true, destinationType: destinationType.DATA_URL });
 });
     
-var alertDismissed = function(){}    
+var alertDismissed = function(){}
 
 $("#compass").on("click", function(){
     
@@ -67,7 +96,6 @@ $("#compass").on("click", function(){
         
     navigator.compass.getCurrentHeading(fireAway, onError);
 });
-
 
    
 
