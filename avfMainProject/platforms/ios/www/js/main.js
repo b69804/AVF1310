@@ -5,28 +5,28 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     
 
+
 $("#myLocale").on("pageinit", function(){
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
                   function onSuccess(position) {
-                  alert('Latitude: '          + position.coords.latitude          + '\n' +
-                        'Longitude: '         + position.coords.longitude         + '\n');
-                  };
+                  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude +"&sensor=true";
+    
+                  $.getJSON(url, myAddressCheck);
+                  
+                  }
                   function onError(error) {
                   alert('code: '    + error.code    + '\n' +
                         'message: ' + error.message + '\n');
-                  };
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+ position.coords.longitude +"&sensor=true";
+                  }
+});
     
-    $.getJSON(url, myAddressCheck);
-                          
-})
 var myAddressCheck = function(addy){
             
     $.each(addy.results, function(index, answer){
                    
         var address = "<li><h3>" + answer.formatted_address + "</h3></li>";
         $('#myAddress').append(address);
-        })
+           });
 };
 
 $("#breakingNewsStories").on("pageinit", function(){
@@ -43,14 +43,13 @@ var breakingNews = function(bNews){
          
          var story = "<li><h3>" + news.headline + "</h3><p>"+ news.description +"</p></li>";
          $('#news').append(story);
-         })
+         });
     };
 
     
 $("#instagram").on("pageinit", function(){
     
       var url = "https://api.instagram.com/v1/tags/"+ device.platform +"/media/recent?callback=?&amp;client_id=46162f299ffe415fb8ba88bde15105fb";
-                   alert(url);
       $.getJSON(url, instaSports);
                    
 });
@@ -67,7 +66,7 @@ $("#network").on("pageinit", function(){
                  var status = {};
                  status[Connection.WIFI] = "<img src='img/wifi.png' class='photo'>";
                  status[Connection.Cell]= "<img src='img/cell-tower.png' class='photo'>";
-            $("#networkPhoto").append(status[networkStatus])
+                 $("#networkPhoto").append(status[networkStatus]);
            
 });
 
@@ -79,11 +78,11 @@ $("#capturePhoto").on("click", function(){
                 var onPhotoDataSuccess = function() {};
                 var onFail = function(message) {
                              alert('Failed because: ' + message);
-                }
+                      };
                 navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, saveToPhotoAlbum:true, destinationType: destinationType.DATA_URL });
 });
     
-var alertDismissed = function(){}
+    var alertDismissed = function(){};
 
 $("#compass").on("click", function(){
     
@@ -92,7 +91,7 @@ $("#compass").on("click", function(){
     };
     var onError = function(compassError){
         alert("Fail.");
-    }
+                 };
         
     navigator.compass.getCurrentHeading(fireAway, onError);
 });
@@ -100,7 +99,7 @@ $("#compass").on("click", function(){
    
 
 
-};
+}
 
 
 
